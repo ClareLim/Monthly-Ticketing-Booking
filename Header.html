@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Switcher</title>
+
+    <link rel="stylesheet" href="Switcher.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Ticket To Ride</h1>
+            <ul class="tabs">
+                <li class="tab is-active">
+                    <a data-switcher data-tab="1">Home</a>
+                </li>
+                <li class="tab">
+                    <a data-switcher data-tab="2">Book</a>
+                </li>
+                <li class="tab">
+                    <a data-switcher data-tab="3">Display</a>
+                </li>
+                <li class="tab">
+                    <a data-switcher data-tab="4">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="pages">
+            <div class="page is-active" data-page="1">
+                <h2>Home</h2>
+                <p>Welcome to the home page</p>
+                <h1>Train Ticketing Reservation System</h1>
+                <h2>Monthly Ticketing Pricing</h1>
+                    <div class="panel">
+                        <div class="pricing-plan">
+
+                            <h2 class="pricing-header">Budget</h2>
+                            <ul class="pricing-features">
+                                <ul class="pricing-features-item">$270 per pax</ul>
+                                <ul class="pricing-features-item">2 pieces of baggage Items, up to 23kg each</ul>
+                            </ul>
+                        </div>
+
+                        <div class="pricing-plan">
+                            <h2 class="pricing-header">Economy</h2>
+                            <ul class="pricing-features">
+                                <ul class="pricing-features-item">$350 per pax</ul>
+                                <ul class="pricing-features-item">2 pieces of baggage Items, up to 30kg each</ul>
+                            </ul>
+                        </div>
+
+                        <div class="pricing-plan">
+                            <h2 class="pricing-header">Business Economy</h2>
+                            <ul class="pricing-features">
+                                <ul class="pricing-features-item">$445</ul>
+                                <ul class="pricing-features-item">2 pieces of baggage Items, up to 36kg each</ul>
+                            </ul>
+                        </div>
+
+                        <div class="pricing-plan">
+                            <h2 class="pricing-header">Premium</h2>
+                            <ul class="pricing-features">
+                                <ul class="pricing-features-item">$570</ul>
+                                <ul class="pricing-features-item">2 pieces of baggage Items, up to 50kg each</ul>
+                            </ul>
+                        </div>
+                    </div>
+
+            </div>
+
+            <form>
+                <div class="page" data-page="2">
+                    <h2>Book</h2>
+                    <p>Welcome to the booking page</p>
+                    <div class="ticketing-container">
+                        <label>
+                            <h1>Pick a Ticket</h1>
+                        </label>
+                        <h2>Select the seats from the seat map and enter contact name together for ticket booking.</h2>
+                        <select id="Ticket">
+                            <option value="270">Budget ($270)</option>
+                            <option value="350">Economy ($350)</option>
+                            <option value="445">Business Economy ($445)</option>
+                            <option value="570">Premium ($570)</option>
+                        </select>
+                    </div>
+
+                    <ul class="showcase">
+                        <li>
+                            <div class="seat"></div>
+                            <small>N/A</small>
+                        </li>
+
+                        <li>
+                            <div class="seat selected"></div>
+                            <small>Selected</small>
+                        </li>
+
+                        <li>
+                            <div class="seat occupied"></div>
+                            <small>Occupied</small>
+                        </li>
+                    </ul>
+
+                    <div class="container">
+                        <div class="screen"></div>
+                        <div class="row">
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                            <div class="seat"></div>
+                        </div>
+                    </div>
+
+                    <!-- keep track of number of seats selected -->
+                    <p class="text">
+                        You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+                    </p>
+
+
+                    <div>
+                        <p>
+                            <label for="Name">Enter a Name:</label>
+                            <input type="Name" type="text" placeholder="Name" name="Name" id="name" required>
+                        </p>
+
+                        <p>
+                            <label for="Phone Number">Enter a Phone Number:</label>
+                            <input type="Phone Number" type="text" placeholder="Phone Number" name="Phone Number"
+                                id="phoneNumber" required>
+                        </p>
+
+                        <p>
+                            <label for="Time Stamp">Enter Time of Ticket Purchase: </label>
+                            <input type="Time Stamp" type="text" placeholder="HH:MM AM/PM" id="timeStamp" required>
+                        </p>
+
+                        <p>
+                            <label for="Arrival Date">Enter Estimated Arrival Date</label>
+                            <input type="Arrival Date" type="date" placeholder="2022-2-22" min="2022-02-22"
+                                max="2022-12-31" id="arrivalDate" required>
+
+
+                        </p>
+
+                        <p>
+                            <label for="Email Address">Enter Contact Email</label>
+                            <input type="Email Address" type="email" placeholder="james.smith@gmail.com" id="email"
+                                required>
+                        </p>
+                    </div>
+
+                    <p>
+                        <input type="checkbox" id="tnc" name="tnc" value="tnc" required>
+                        <label for="tnc"> I have read and accept the Terms and Conditions and I declare I have been
+                            informed of the Privacy Policy.</label><br>
+
+                        <input type="checkbox" id="eligibility" name="eligibility" value="eligibility" required>
+                        <label for="tnc"> I can confirm that all passengers meet the eligibility requirements including
+                            COVID-19
+                            Vaccination.</label><br>
+
+                    </p>
+
+                    <p>
+                        <button class="button" id="bookButton">Book Ticket</button>
+
+                        <button class="button" id="displayListButton">Display Reservation List</button>
+                    </p>
+
+                </div>
+                <div class="page" data-page="3">
+                    <h2>Display</h2>
+                    <p>Welcome to the Display page</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Quantity</th>
+                                <th>Timestamp</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservation">
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="page" data-page="4">
+                    <h2>FAQ</h2>
+                    <p>Welcome to the FAQ page</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="Switcher.js"></script>
+</body>
+
+</html>

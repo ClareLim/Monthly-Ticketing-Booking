@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 2px;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    background-color: rgba(238, 238, 238, 0.653);
+    padding: 0px;
+}
+
+header {
+    background-color: #FFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 142px;
+    padding-right: 142px;
+}
+
+header nav h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+header nav .tabs {
+    list-style-type: none;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav .tabs .tab {
+    display: block;
+}
+
+header nav .tabs .tab a[data-switcher] {
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #FFF;
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+header nav .tabs .tab:hover a[data-switcher] {
+    background-color: #F7A800;
+}
+
+header nav .tabs .tab.is-active a[data-switcher] {
+    background-color: #F7A800;
+    font-weight: 700;
+}
+
+main {
+    padding-left: 142px;
+    padding-right: 142px;
+}
+
+.pages {
+    margin-top: 100px;
+    padding: 50px 30px;
+    border-radius: 8px;
+    background-color: #FFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pages .page {
+    display: none;
+}
+
+.pages .page.is-active {
+    display: block;
+}
+
+.seat {
+    background-color: #444451;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+
+.movie-container {
+    margin: 20px 0,
+}
+
+.movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 15px;
+    padding: 5px 15px;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.seat.selected {
+    background-color: royalblue;
+
+}
+
+.seat.occupied {
+    background-color: #F7A800;
+}
+
+.seat:nth-of-type(2) {
+    margin-right: 18px;
+}
+
+/* when seat not occupied, cursor changes and seat becomes bigger */
+.seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover{
+    cursor: default;
+    transform: scale(1);
+}
+
+/* making legends more aesthetically pleasing */
+.showcase {
+    background-color: rgba(0,0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type:none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.showcase li {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin: 0px 10px;
+}
+
+.showcase li small {
+    margin-left: 10px;
+}
+
+p.text {
+    margin: 5px 0;
+}
+
+p.text span {
+    color: royalblue;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
