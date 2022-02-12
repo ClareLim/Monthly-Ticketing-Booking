@@ -47,9 +47,7 @@ var selectedSeats = []
 
 function display() {
     var reservations = localStorage.getItem('storedSeats')
-    if (reservationList.innerHTML.trim().length > 0) {
-        reservationList.innerHTML = ""
-    } else if (reservations !== null) {
+    if (reservations !== null) {
         var parsedReservations = JSON.parse(reservations)
         var str = ''
         parsedReservations.forEach(function (reservation, index) {
@@ -57,7 +55,7 @@ function display() {
                 '<td>' + reservation.index + '</td>' +
                 '<td>' + reservation.name + '</td>' +
                 '<td>' + reservation.phoneNumber + '</td>' +
-                '<td>' + reservation.selectedlength + '</td>' +
+                '<td>' + reservation.selectedSeats.length + '</td>' +
                 '<td>' + reservation.timeStamp + '</td>' +
                 '<td>' + `<button onclick='cancel("${index}")'>` + "Cancel Reservation" + "</button>" + '</td>'
                 + '</tr>';
